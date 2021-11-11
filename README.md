@@ -1,1 +1,1 @@
-# multiband-classification
+# multiclass-multiband-classification of satilites data
