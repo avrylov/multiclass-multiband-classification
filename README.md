@@ -35,7 +35,7 @@ There are three experiments:
 
 to run the training:
 * run the train.py. Note that augmentation does not work with Sentinel-2 multispectral data.
-* run tenserboard:
+* run tensorboard:
   * enter src folder
   * run command _"tensorboard --logdir logs/scalar"_
 
