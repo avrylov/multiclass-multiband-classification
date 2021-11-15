@@ -1,6 +1,6 @@
-import pytorch_lightning as pl
 from torch.utils.data import DataLoader
 
+import pytorch_lightning as pl
 from pytorch_lightning import loggers
 from pytorch_lightning.callbacks import early_stopping, model_checkpoint
 
@@ -20,10 +20,10 @@ train_full_batch = (train_df.shape[0] // batch_size) * batch_size
 
 s2_input_size = (13, 64, 64)
 train_dataset = MyDataset(train_df[:train_full_batch], is_train=False, s2_input_size=s2_input_size)
-train_loader = DataLoader(train_dataset, batch_size=batch_size, pin_memory=True, shuffle=True)
+train_loader = DataLoader(train_dataset, batch_size=batch_size, pin_memory=True, shuffle=True, num_workers=12)
 
 val_dataset = MyDataset(val_df, is_train=False, s2_input_size=s2_input_size)
-val_loader = DataLoader(val_dataset, batch_size=batch_size, pin_memory=True, shuffle=False)
+val_loader = DataLoader(val_dataset, batch_size=batch_size, pin_memory=True, shuffle=False, num_workers=12)
 
 
 logger = loggers.TensorBoardLogger(LOGGER_EXP_PATH)

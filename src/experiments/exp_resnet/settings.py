@@ -1,17 +1,17 @@
 import os
+from decouple import config
 
 import torch
 
 
 AVAIL_GPUS = min(1, torch.cuda.device_count())
 
-PROJECT_ROOT = '/home/rylov/PycharmProjects/multiband_classification/src'  # abs path to src root
-
+PROJECT_ROOT = config('PROJECT_ROOT') # abs path to src root
 S2_DATA_FOLDER_PATH = os.path.join(PROJECT_ROOT, 's2_data')
 CSV_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'csv')
 
-EXP = 'conv_net'
-SUB_EXP = EXP + '.8'
+EXP = 'res_net'
+SUB_EXP = EXP + '.13'
 
 LOGGER_PATH = os.path.join(PROJECT_ROOT, 'logs/scalar')
 LOGGER_EXP_PATH = os.path.join(LOGGER_PATH, SUB_EXP)
@@ -31,3 +31,4 @@ class_names = [
     'River',
     'SeaLake'
 ]
+

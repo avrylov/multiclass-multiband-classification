@@ -1,2 +1,6 @@
+src/check_points/res_net.13
 src/s2_data
 .venv
+.env
+.ipynb_checkpoints
+.idea

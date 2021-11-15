@@ -1,6 +1,6 @@
-import pytorch_lightning as pl
 from torch.utils.data import DataLoader
 
+import pytorch_lightning as pl
 from pytorch_lightning import loggers
 from pytorch_lightning.callbacks import early_stopping, model_checkpoint
 
@@ -15,15 +15,15 @@ dataset, df = make_data_frame(CSV_FOLDER_PATH, 'train.csv', 'val.csv', 'test.csv
 train_df = df.get('train')
 val_df = df.get('validate')
 
-batch_size = 256
+batch_size = 128
 train_full_batch = (train_df.shape[0] // batch_size) * batch_size
 
 s2_input_size = (13, 64, 64)
 train_dataset = MyDataset(train_df[:train_full_batch], is_train=False, s2_input_size=s2_input_size)
-train_loader = DataLoader(train_dataset, batch_size=batch_size, pin_memory=True, shuffle=True)
+train_loader = DataLoader(train_dataset, batch_size=batch_size, pin_memory=True, shuffle=True, num_workers=12)
 
 val_dataset = MyDataset(val_df, is_train=False, s2_input_size=s2_input_size)
-val_loader = DataLoader(val_dataset, batch_size=batch_size, pin_memory=True, shuffle=False)
+val_loader = DataLoader(val_dataset, batch_size=batch_size, pin_memory=True, shuffle=False, num_workers=12)
 
 
 logger = loggers.TensorBoardLogger(LOGGER_EXP_PATH)
@@ -38,7 +38,7 @@ check_pointer = model_checkpoint.ModelCheckpoint(dirpath=CHECK_POINTER_EXP_PATH,
                                                  monitor='val_loss',
                                                  mode='min')
 
-pl_model = TorchLightNet(lr=1e-3, weight_decay=1e-4)
+pl_model = TorchLightNet(lr=1e-2, weight_decay=5e-5)
 print(pl_model.configure_optimizers())
 
 make_yaml(pl_model, dataset, CHECK_POINTER_EXP_PATH)
