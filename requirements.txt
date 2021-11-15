@@ -20,10 +20,8 @@ entrypoints==0.3
 frozenlist==1.2.0
 fsspec==2021.10.1
 future==0.18.2
-GDAL==3.2.1
 google-auth==2.3.3
 google-auth-oauthlib==0.4.6
-grpcio==1.41.1
 idna==3.3
 idna-ssl==1.1.0
 imageio==2.10.1
