@@ -1,11 +1,12 @@
 import os
+from decouple import config
 
 import torch
 
 
 AVAIL_GPUS = min(1, torch.cuda.device_count())
 
-PROJECT_ROOT = os.environ.get('PROJECT_ROOT')  # abs path to src root # abs path to src root
+PROJECT_ROOT = config('PROJECT_ROOT')  # abs path to src root # abs path to src root
 
 S2_DATA_FOLDER_PATH = os.path.join(PROJECT_ROOT, 's2_data')
 CSV_FOLDER_PATH = os.path.join(PROJECT_ROOT, 'csv')
