@@ -42,6 +42,7 @@ to run the training:
 #### TEST THE MODEL
 to run the testing:
 * run "**notebooks/model test.ipynb**"
+* to run resnet based model, first download weights from [gdrive](https://drive.google.com/file/d/1j6Z_q4tQjMgOQGLKwYWF1RXf6YliNKiy/view?usp=sharing)
 
 Metrics on test dataset: precision is 0.91, recall is 0.91, f1 is 0.91
 
