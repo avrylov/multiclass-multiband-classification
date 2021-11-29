@@ -27,11 +27,12 @@ easy download from [google drive ](https://drive.google.com/drive/folders/1VkVGs
 ![img.png](13bands.png)
 
 #### TRAIN THE MODEL
-There are three experiments:
+There are few experiments:
 * costume resnet for multispectral data - **"exp_resnet"** (test metrics _precision is 0.81, recall is 0.8, f1 is 0.8_)
 * simple convolution nn - **"exp_main"** with _ReduceLROnPlateau_ learning rate annealing. (test metrics _precision is 0.91, recall is 0.91, f1 is 0.91_)
 * simple convolution nn - **"exp_cos_lr_ann"** with _CosineAnnealingLR_ learning rate annealing.
   * Both works pretty well, but with _CosineAnnealingLR_ training is longer.
+* unet + fully connected layers - **"exp_unet_fcl.2"**. (test metrics _precision is 0.92, recall is 0.92, f1 is 0.92_)
 
 to run the training:
 * run the train.py. Note that augmentation does not work with Sentinel-2 multispectral data.
@@ -43,8 +44,9 @@ to run the training:
 to run the testing:
 * run "**notebooks/model test.ipynb**"
 * to run resnet based model, first download weights from [gdrive](https://drive.google.com/file/d/1j6Z_q4tQjMgOQGLKwYWF1RXf6YliNKiy/view?usp=sharing)
+* to run unet based model, first download weights from [gdrive](https://drive.google.com/file/d/1axRDVYDAdTOX_8JrHU1MyuUkI4Z1kPe4/view?usp=sharing)
 
-Metrics on test dataset: precision is 0.91, recall is 0.91, f1 is 0.91
+Metrics on test dataset: precision is 0.92, recall is 0.92, f1 is 0.92
 
 Confusion matrix on test dataset:
 
