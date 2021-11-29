@@ -1,6 +1,12 @@
-src/check_points/res_net.13
-src/s2_data
+# venvs
 .venv
 .env
+
+# path
+src/check_points/res_net.13
+src/s2_data
+src/check_points/unet_fcl.2/epoch=125-val_loss=0.2443-val_acc=0.9387.ckpt
+
+# other
 .ipynb_checkpoints
 .idea
