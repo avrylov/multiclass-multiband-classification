@@ -1,0 +1,13 @@
+# venvs
+.venv
+.env
+
+# path
+src/check_points/res_net.13
+src/s2_data
+src/check_points/unet_fcl.2/epoch=125-val_loss=0.2443-val_acc=0.9387.ckpt
+src/logs/scalar/unet_fcl.2.7/default/version_9/events.out.tfevents.1637136647.rylov.24011.0
+
+# other
+.ipynb_checkpoints
+.idea
